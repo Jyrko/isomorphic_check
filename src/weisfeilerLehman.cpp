@@ -5,7 +5,7 @@ std::vector<int> getDegree(std::vector<std::vector<int>> adjMat){
     std::vector<int> degrees;
     for(int i = 0; i < adjMat.size();i++){
         int deg = 0;
-        for(int j = 0; i < adjMat.size();j++){
+        for(int j = 0; j < adjMat.size();j++){
             if(adjMat[i][j] != 0)deg++;
         }
         degrees.push_back(deg);
@@ -16,10 +16,10 @@ std::vector<int> getCanonical(std::vector<std::vector<int>> adjMat){
     std::vector<int> degrees;
     std::vector<int> values = getDegree(adjMat);
     degrees = values;
-    for(int i = 0; i < log(adjMat.size());i++){
+    for(int k = 0; k < log(adjMat.size());k++){
         for(int i = 0; i < adjMat.size();i++){
             int deg = 0;
-            for(int j = 0; i < adjMat.size();j++){
+            for(int j = 0; j < adjMat.size();j++){
                 if(adjMat[i][j] != 0){
                     deg += degrees[j];
                 } 
