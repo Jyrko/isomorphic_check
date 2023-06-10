@@ -26,24 +26,13 @@ std::vector<int> getDegreeSequence(std::vector<std::vector<int>> adjMat1) {
     return degreeSequence;
 }
 
-std::vector<int> getAllVertexPermutations(std::vector<std::vector<int>> adjMat1) {
-    if (getGraphOrder(adjMat1) > 8) {
-        std::cout << "Your request is not reasonable. 8 is the max order" << std::endl; 
-        return {};
-    }
-    std::vector<int> allAdjMatrices = {};
-
-
-    return allAdjMatrices;
-}
-
-
-bool bruteForce(const std::vector<std::vector<int>>& adjMat1, const std::vector<std::vector<int>>& adjMat2) {
+bool bruteForce(const std::vector<std::vector<int>>& adjMat1, const std::vector<std::vector<int>>& adjMat2, bool optimization=false) {
     if (getGraphOrder(adjMat1) != getGraphOrder(adjMat2)) return false;
 
     std::vector<int> degreeSequence1 = getDegreeSequence(adjMat1);
     std::vector<int> degreeSequence2 = getDegreeSequence(adjMat2);
-    if (degreeSequence1 != degreeSequence2) { 
+    if (degreeSequence1 != degreeSequence2 && optimization) { 
+        std::cout << "Degree sequences are not equal" << std::endl;
         return false; 
     } else {
         const int size = adjMat1.size();
@@ -75,6 +64,6 @@ bool bruteForce(const std::vector<std::vector<int>>& adjMat1, const std::vector<
 
 
 
-bool ValidateIsomorphism::bruteForceMethod() {
-    return bruteForce(adjMat1, adjMat2);
+bool ValidateIsomorphism::bruteForceMethod(bool optimization) {
+    return bruteForce(adjMat1, adjMat2, optimization);
 }

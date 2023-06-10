@@ -12,7 +12,7 @@ class ValidateIsomorphism {
 
         bool areDefinedMatrices(std::vector<std::vector<int>> adjMat1, std::vector<std::vector<int>> adjMat2) { return adjMat1.size() && adjMat2.size(); };
 
-        bool bruteForceMethod();
+        bool bruteForceMethod(bool optimization=false);
 
         bool weisfeilerLehmanMethod();
 
