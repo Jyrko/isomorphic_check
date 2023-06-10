@@ -3,8 +3,8 @@ bool weisfeilerLehman(std::vector<std::vector<int>> adjMat1, std::vector<std::ve
     if(adjMat1.size() != adjMat2.size())return false;
     std::vector<int>v1 =  getCanonical(adjMat1);
     std::vector<int>v2 =  getCanonical(adjMat2);
-    v1.sort();
-    v2.sort();
+    sort(v1);
+    sort(v2);
     return v1 == v2;
 }
 std::vector<int> getDegree(std::vector<std::vector<int>> adjMat){
