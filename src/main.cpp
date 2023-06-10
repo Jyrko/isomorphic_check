@@ -5,7 +5,22 @@
 
 
 int main() {
-    ValidateIsomorphism validator = ValidateIsomorphism({{1, 1, 0, 0, 1, 0}, {1, 0, 1, 0, 1, 0}}, {{2, 1, 3, 2, 1, 3}, {1, 2, 3, 1, 2}});
+    ValidateIsomorphism validator = ValidateIsomorphism(
+        {
+            {0, 0, 1, 1, 0},
+            {0, 0, 0, 1, 1},
+            {1, 0, 0, 0, 1},
+            {1, 1, 0, 0, 0},
+            {0, 1, 1, 0, 0},
+        }, 
+        {   
+            {0, 1, 0, 0, 1},
+            {1, 0, 1, 0, 0},
+            {0, 1, 0, 1, 0},
+            {0, 0, 1, 0, 1},
+            {1, 0, 0, 1, 0}
+        }
+        );
 
     std::cout << validator.bruteForceMethod() << std::endl;
     std::cout << validator.weisfeilerLehmanMethod() << std::endl;
