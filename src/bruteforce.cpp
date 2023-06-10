@@ -16,7 +16,7 @@ std::vector<int> getDegreeSequence(std::vector<std::vector<int>> adjMat1) {
     std::vector<int> degreeSequence = {};
     for (int i = 0; i < adjMat1.size(); i++) {
         int summ = accumulate(adjMat1[i].begin(), adjMat1[i].end(), 0);
-        std::cout << "Current summ: " << summ << std::endl;
+        // std::cout << "Current summ: " << summ << std::endl;
         degreeSequence.push_back(summ);
     }
     sort(degreeSequence.begin(), degreeSequence.end(), [](const int& num1, const int& num2) {
@@ -32,7 +32,7 @@ bool bruteForce(const std::vector<std::vector<int>>& adjMat1, const std::vector<
     std::vector<int> degreeSequence1 = getDegreeSequence(adjMat1);
     std::vector<int> degreeSequence2 = getDegreeSequence(adjMat2);
     if (degreeSequence1 != degreeSequence2 && optimization) { 
-        std::cout << "Degree sequences are not equal" << std::endl;
+        // std::cout << "Degree sequences are not equal. ";
         return false; 
     } else {
         const int size = adjMat1.size();

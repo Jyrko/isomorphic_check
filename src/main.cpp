@@ -72,17 +72,21 @@ int main() {
             {1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1},
         }
         );
-    std::cout << validator.bruteForceMethod() << std::endl;
-    std::cout << validator.weisfeilerLehmanMethod() << std::endl;
-    std::cout << validator.kWeisfeilerLehmanMethod() << std::endl;
 
-    std::cout << validator2.bruteForceMethod() << std::endl;
-    std::cout << validator2.weisfeilerLehmanMethod() << std::endl;
-    std::cout << validator2.kWeisfeilerLehmanMethod() << std::endl;
+    std::cout << std::endl << "Validator 1 (isomorphic graphs):" << std::endl;
+    std::cout << "Graphs are " << (validator.bruteForceMethod() ? "" : "not ") << "isomorphic by the brute force method." << std::endl;
+    std::cout << "Graphs are " << (validator.weisfeilerLehmanMethod() ? "" : "not ") << "isomorphic by the Weisfeiler-Lehman test." << std::endl;
+    std::cout << "Graphs are " << (validator.kWeisfeilerLehmanMethod() ? "" : "not ") << "isomorphic by the k Weisfeiler-Lehman test." << std::endl;
 
-    std::cout << validator3.bruteForceMethod() << std::endl; // validator3.bruteForceMethod(true) for the optimization
-    std::cout << validator3.weisfeilerLehmanMethod() << std::endl;
-    std::cout << validator3.kWeisfeilerLehmanMethod() << std::endl;
+    std::cout << std::endl << "Validator 2 (non isomorphic graphs):" << std::endl;
+    std::cout << "Graphs are " << (validator2.bruteForceMethod() ? "" : "not ") << "isomorphic by the brute force method." << std::endl;
+    std::cout << "Graphs are " << (validator2.weisfeilerLehmanMethod() ? "" : "not ") << "isomorphic by the Weisfeiler-Lehman test." << std::endl;
+    std::cout << "Graphs are " << (validator2.kWeisfeilerLehmanMethod() ? "" : "not ") << "isomorphic by the k Weisfeiler-Lehman test." << std::endl;
+
+    std::cout << std::endl << "Validator 3 (non isomorphic graphs):" << std::endl;
+    std::cout << "Graphs are " << (validator3.bruteForceMethod(true) ? "" : "not ") << "isomorphic by the brute force method." << std::endl; // validator3.bruteForceMethod(true) for the optimization
+    std::cout << "Graphs are " << (validator3.weisfeilerLehmanMethod() ? "" : "not ") << "isomorphic by the Weisfeiler-Lehman test." << std::endl;
+    std::cout << "Graphs are " << (validator3.kWeisfeilerLehmanMethod() ? "" : "not ") << "isomorphic by the k Weisfeiler-Lehman test." << std::endl;
 
 
     return 0;
