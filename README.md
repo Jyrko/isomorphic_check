@@ -1,4 +1,5 @@
 # isomorphic_check
+There is an example of two algorithms to figure out whether graphs are isomorphic or not, namely the bruteforce method and the Weisfeiler-Lehman test.
 
 Requirements:
   min C++ version - 17
